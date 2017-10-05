@@ -6,5 +6,5 @@
 .idea
 *.iml
 out
-src.unzipFolder
+src/unzipFolder
 gen
