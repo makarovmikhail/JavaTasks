@@ -1,3 +1,4 @@
+import java.io.IOException;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Scanner;
@@ -35,5 +36,14 @@ public class Main {
         Scanner sc = new Scanner("hello 2 3 4 5 6");
         System.out.println(Task4.ScannerToStreamWord(sc).findFirst().get());
         */
+
+        /*
+        Task5
+        */
+        try {
+            Task5.UnZip();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }
