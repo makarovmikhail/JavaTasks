@@ -1,9 +1,3 @@
-import java.io.IOException;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.Scanner;
-import java.util.stream.Stream;
-
 /**
  * Created by Mikhail on 04.10.2017.
  */
@@ -39,11 +33,12 @@ public class Main {
 
         /*
         Task5
-        */
+
         try {
             Task5.UnZip();
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
     }
 }
