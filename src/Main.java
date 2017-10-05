@@ -1,3 +1,8 @@
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Scanner;
+import java.util.stream.Stream;
+
 /**
  * Created by Mikhail on 04.10.2017.
  */
@@ -5,7 +10,7 @@ public class Main {
     public static void main(String[] args) {
 
         /*
-        Task1
+        //Task1
         System.out.println(Task1.gcd(-6,-6));
         System.out.println(Task1.gcd_floorMod(-6,-6));
         System.out.println(Task1.gcd_rem(-6,-6));
@@ -13,7 +18,7 @@ public class Main {
         */
 
         /*
-        Task2
+        //Task2
         Arguments: ["Hello"]
         String s = args[0];
         System.out.println(Task2.rot13(s));
@@ -21,13 +26,14 @@ public class Main {
         */
 
         /*
-        Task3
+        //Task3
         System.out.println(Task3.HexToDecimal("A10F"));
         */
 
-
-
-
-
+        /*
+        //Task4
+        Scanner sc = new Scanner("hello 2 3 4 5 6");
+        System.out.println(Task4.ScannerToStreamWord(sc).findFirst().get());
+        */
     }
 }
