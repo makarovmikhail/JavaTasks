@@ -1,3 +1,5 @@
+import java.io.IOException;
+
 /**
  * Created by Mikhail on 04.10.2017.
  */
@@ -40,5 +42,11 @@ public class Main {
             e.printStackTrace();
         }
         */
+        try {
+            Task5.searching();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
     }
 }
