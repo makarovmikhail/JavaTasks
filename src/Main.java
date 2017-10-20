@@ -1,5 +1,3 @@
-import java.io.IOException;
-
 /**
  * Created by Mikhail on 04.10.2017.
  */
@@ -57,12 +55,13 @@ public class Main {
         */
         /*
         Task7
-        */
+
         try {
             Task7.startPrinting(5);
         } catch (IOException e) {
             e.printStackTrace();
         }
+        */
         /*
         //Task8
         System.out.println(Task8.generator(Long.parseLong("25214903917"),11,(long)Math.pow(2,48),1).skip(3).findFirst().get());
@@ -70,11 +69,9 @@ public class Main {
 
         /*
         //Task9
+
         System.out.println(Task9.zip(Stream.of("1","2","3"),Stream.of("99")).skip(1).findFirst().get());
         */
-
-
-
 
     }
 }
