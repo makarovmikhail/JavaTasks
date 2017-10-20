@@ -45,7 +45,14 @@ public class Main {
             e.printStackTrace();
         }
         */
-
+        /*
+        Task6
+        try {
+            System.out.println(Task6.countParticularChar('E'));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        */
 
         /*
         //Task8
