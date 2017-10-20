@@ -33,7 +33,6 @@ public class Main {
 
         /*
         Task5
-
         try {
             Task5.UnZip();
         } catch (IOException e) {
@@ -47,16 +46,17 @@ public class Main {
         }
         */
 
+
         /*
-        Task8
+        //Task8
         System.out.println(Task8.generator(Long.parseLong("25214903917"),11,(long)Math.pow(2,48),1).skip(3).findFirst().get());
         */
 
         /*
-        Task9
-
+        //Task9
         System.out.println(Task9.zip(Stream.of("1","2","3"),Stream.of("99")).skip(1).findFirst().get());
         */
+
 
 
 

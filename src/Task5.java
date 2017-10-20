@@ -54,15 +54,22 @@ public class Task5 {
         }
     }
     static void searching() throws IOException {
-        Files.walk(Paths.get("D://unzipFolder/"),100)
-                .filter(p -> p.toString().contains("volatile"))
-                .map(p -> p.getParent().getParent())
-                .distinct()
-                .forEach(System.out::println);
         Files.walk(Paths.get("D://unzipFolder"))
-                .filter(p -> p.toString().contains("transient"))
-                .map(p -> p.getParent().getParent())
-                .distinct()
-                .forEach(System.out::println);
+            .filter(p->{
+                try {
+                    if( Files.lines(p)
+                        .filter(l->{
+                            return l.contains("volatile") || l.contains("transient");
+                        }).count() > 0){
+                        return true;
+                    }
+                } catch (IOException e) {
+                    //e.printStackTrace();
+                }
+                return false;
+            })
+            .forEach(p->{
+                System.out.println(p.toString());
+            });
     }
 }
