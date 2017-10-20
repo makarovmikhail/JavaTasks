@@ -3,7 +3,7 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 
 /**
- * Created by Mikhail on 21.10.2017.
+ * Created by Mikhail on 06.10.2017.
  */
 public class Task6 {
     public static long countParticularChar(char a) throws IOException {
