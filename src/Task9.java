@@ -3,6 +3,7 @@ import java.util.stream.Stream;
 
 /**
  * Created by Mikhail on 06.10.2017.
+ * Переопределить hasNext next (итератора)
  */
 public class Task9 {
     public static Stream<String> zip (Stream<String> first, Stream<String> second){

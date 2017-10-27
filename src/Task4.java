@@ -1,4 +1,4 @@
-import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.Scanner;
 import java.util.Spliterator;
 import java.util.Spliterators;
@@ -7,31 +7,68 @@ import java.util.stream.StreamSupport;
 
 /**
  * Created by Mikhail on 05.10.2017.
+ * Переделать без перехода в лист
  */
 public class Task4 {
-    static Stream<String> ScannerToStreamWord(Scanner scanner) {
-        Spliterator<String> splt = Spliterators.spliterator(scanner, Long.MAX_VALUE, Spliterator.ORDERED | Spliterator.NONNULL);
-        return StreamSupport.stream(splt, false).onClose(scanner::close);
+    public static Stream<Integer> scannerToStreamInt(Scanner scanner){
+        Iterator<Integer> iterator = new Iterator<Integer>() {
+            @Override
+            public boolean hasNext() {
+                while(scanner.hasNext() && !scanner.hasNextInt())
+                    scanner.next();
+                return scanner.hasNext();
+            }
+
+            @Override
+            public Integer next() {
+                while(scanner.hasNext() && !scanner.hasNextInt())
+                    scanner.next();
+                return scanner.nextInt();
+            }
+        };
+
+        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(
+                iterator, Spliterator.ORDERED | Spliterator.NONNULL), false);
     }
-    static Stream<String> ScannerToStreamString(Scanner scanner) {
-        ArrayList<String> a = new ArrayList();
-        while(scanner.hasNextLine()){
-            a.add(scanner.nextLine());
-        }
-        return a.stream();
+    public static Stream<Double> scannerToStreamDouble(Scanner scanner){
+        Iterator<Double> iterator = new Iterator<Double>() {
+            @Override
+            public boolean hasNext() {
+                while(scanner.hasNext() && !scanner.hasNextDouble())
+                    scanner.next();
+                return scanner.hasNext();
+            }
+
+            @Override
+            public Double next() {
+                while(scanner.hasNext() && !scanner.hasNextDouble())
+                    scanner.next();
+                return scanner.nextDouble();
+            }
+        };
+
+        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(
+                iterator, Spliterator.ORDERED | Spliterator.NONNULL), false);
     }
-    static Stream<Integer> ScannerToStreamInteger(Scanner scanner) {
-        ArrayList<Integer> a = new ArrayList();
-        while(scanner.hasNextInt()){
-            a.add(scanner.nextInt());
-        }
-        return a.stream();
+    public static Stream<String> scannerToStreamString(Scanner scanner){
+        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(
+                scanner, Spliterator.ORDERED | Spliterator.NONNULL), false);
     }
-    static Stream<Double> ScannerToStreamDouble(Scanner scanner) {
-        ArrayList<Double> a = new ArrayList();
-        while(scanner.hasNextDouble()){
-            a.add(scanner.nextDouble());
-        }
-        return a.stream();
+    public static Stream<String> scannerToStreamLines(Scanner scanner){
+        Iterator<String> iterator = new Iterator<String>() {
+            @Override
+            public boolean hasNext() {
+                return scanner.hasNextLine();
+            }
+
+            @Override
+            public String next() {
+                return scanner.nextLine();
+            }
+        };
+
+        return StreamSupport.stream(Spliterators.spliteratorUnknownSize(
+                iterator, Spliterator.ORDERED | Spliterator.NONNULL), false);
     }
+
 }
