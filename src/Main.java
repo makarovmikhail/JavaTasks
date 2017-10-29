@@ -9,8 +9,8 @@ public class Main {
         /*
         */
         //System.out.println(Task1.gcd(-6,-6));
-        //System.out.println(Task1.gcd_floorMod(-6,-6));
-        //System.out.println(Task1.gcd_rem(-6,-6));
+        //System.out.println(Task1.gcd_floorMod(-6,-12));
+        //System.out.println(Task1.gcd_rem(-6,60));
         /*
         All methods has same efficient with negative values
         */
@@ -25,7 +25,7 @@ public class Main {
 
 
         //Task3
-        System.out.println(Task3.HexToDecimal("A10F"));
+        //System.out.println(Task3.HexToDecimal("A10F"));
 
 
         /*
